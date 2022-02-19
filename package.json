@@ -1,11 +1,13 @@
 {
   "name": "yang-tool",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "个人常用代码工具集合",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "add-version": "node add-version",
+    "publish": "add-version && npm publish"
   },
   "repository": {
     "type": "git",
