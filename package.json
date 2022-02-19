@@ -1,13 +1,14 @@
 {
   "name": "yang-tool",
-  "version": "0.0.7",
+  "version": "0.0.4",
   "description": "个人常用代码工具集合",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "tsc": "tsc",
-    "add-version": "node add-version",
-    "publish": "add-version && npm publish"
+    "build": "tsc",
+    "publish:patch": "npm run build && npm version patch && npm publish",
+    "publish:minor": "npm run build && npm version minor && npm publish",
+    "publish:major": "npm run build && npm version major && npm publish"
   },
   "repository": {
     "type": "git",
