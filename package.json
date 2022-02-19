@@ -6,10 +6,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "publish:patch": "npm run build && npm version patch && npm run publish",
-    "publish:minor": "npm run build && npm version minor && npm run publish",
-    "publish:major": "npm run build && npm version major && npm run publish",
-    "publish": "npm publish && git push"
+    "publish:patch": "npm run build && npm version patch && npm publish && git push",
+    "publish:minor": "npm run build && npm version minor && npm publish && git push",
+    "publish:major": "npm run build && npm version major && npm publish && git push"
   },
   "repository": {
     "type": "git",
