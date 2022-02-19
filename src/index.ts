@@ -2,8 +2,8 @@
  * @description 返回url中的参数对象
  * @returns {Object}
  */
-export function getParamsObj() {
-  const paramsObj = {}
+export function getParamsObj(): any {
+  const paramsObj: any = {}
   if (window.location.search) {
     const paramsArr = window.location.search.substr(1).split('&')
     paramsArr.forEach((param) => {
@@ -13,5 +13,3 @@ export function getParamsObj() {
   }
   return paramsObj
 }
-
-export default { getParamsObj }
