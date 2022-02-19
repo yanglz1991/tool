@@ -1,6 +1,6 @@
 {
   "name": "yang-tool",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "个人常用代码工具集合",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
