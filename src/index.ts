@@ -1,6 +1,5 @@
 /**
- * @description 返回url中的参数对象
- * @returns {Object}
+ * 返回url中的参数对象
  */
 export function getParamsObj(): any {
   const paramsObj: any = {}
