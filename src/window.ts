@@ -21,12 +21,6 @@ export function fullScreen(dom?: DOMException) {
   const element = document.documentElement || dom
   if (element.requestFullscreen) {
     element.requestFullscreen()
-  } else if (element.msRequestFullscreen) {
-    element.msRequestFullscreen()
-  } else if (element.mozRequestFullScreen) {
-    element.mozRequestFullScreen()
-  } else if (element.webkitRequestFullscreen) {
-    element.webkitRequestFullscreen()
   }
 }
 
@@ -36,12 +30,6 @@ export function fullScreen(dom?: DOMException) {
 export function exitFullscreen() {
   if (document.exitFullscreen) {
     document.exitFullscreen()
-  } else if (document.msExitFullscreen) {
-    document.msExitFullscreen()
-  } else if (document.mozCancelFullScreen) {
-    document.mozCancelFullScreen()
-  } else if (document.webkitExitFullscreen) {
-    document.webkitExitFullscreen()
   }
 }
 
@@ -50,7 +38,7 @@ export function exitFullscreen() {
  */
 export function isFullScreen(dom?: DOMException) {
   const document = window.document || dom
-  const isFull = !!(document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenElement)
+  const isFull = !!(document.fullscreenElement)
   return !isFull
 }
 
