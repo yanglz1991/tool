@@ -1,6 +1,6 @@
-import { timeLongFromNowToEndTime as timeLongFromNowToEndTimeModule } from './time'
+import * as timeModule from './time'
 
-export const timeLongFromNowToEndTime = timeLongFromNowToEndTimeModule
+export const timeLongFromNowToEndTime = timeModule.timeLongFromNowToEndTime
 //#region window 相关方法
 
 /**
