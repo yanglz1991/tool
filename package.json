@@ -1,11 +1,12 @@
 {
   "name": "yang-tool",
-  "version": "0.0.14",
+  "version": "0.0.17",
   "description": "个人常用代码工具集合",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "rm ./dist/* ; tsc",
+    "build:publish": "npm run build && npm publish",
     "publish:patch": "npm run build && npm version patch && npm publish && git push",
     "publish:minor": "npm run build && npm version minor && npm publish && git push",
     "publish:major": "npm run build && npm version major && npm publish && git push"
@@ -22,7 +23,5 @@
   },
   "homepage": "https://github.com/yanglz1991/tool#readme",
   "dependencies": {
-    "dayjs": "^1.10.7",
-    "loadsh": "^0.0.4"
   }
 }

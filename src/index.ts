@@ -1,6 +1,3 @@
-import * as dayjsModel from 'dayjs'
-export const dayjs = dayjsModel
-
 /**
  * 返回url中的参数对象
  */
