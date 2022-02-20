@@ -1,7 +1,7 @@
 /**
  * 返回url中的参数对象
  */
-export function getParamsObj(): any {
+export function getQueryFromUrl(): any {
   const paramsObj: any = {}
   if (window.location.search) {
     const paramsArr = window.location.search.substr(1).split('&')
