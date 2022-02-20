@@ -1,14 +1,5 @@
-/**
- * 返回url中的参数对象
- */
-export function getQueryFromUrl(): any {
-  const paramsObj: any = {}
-  if (window.location.search) {
-    const paramsArr = window.location.search.substr(1).split('&')
-    paramsArr.forEach((param) => {
-      const paramArr = param.split('=')
-      paramsObj[paramArr[0]] = paramArr[1] || null
-    })
-  }
-  return paramsObj
-}
+import * as windowFun from './window'
+
+const ALL_FUNCTION =  { ...windowFun }
+
+export default ALL_FUNCTION
