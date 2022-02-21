@@ -1,6 +1,3 @@
-import * as timeModule from './time'
-
-export const timeLongFromNowToEndTime = timeModule.timeLongFromNowToEndTime
 //#region window 相关方法
 
 /**
@@ -17,7 +14,6 @@ export function getQueryFromUrl(): any {
   }
   return paramsObj
 }
-
 
 /**
  * 全屏操作
@@ -100,7 +96,7 @@ declare const wx: any
 /**
  * 传入页面url，判断回退到该页面时是否刷新
  */
-export function WX_isRefresh(pageUrl: string): boolean {
+export function wx_isRefresh(pageUrl: string): boolean {
   const result = wx.getStorageSync(pageUrl)
   if (result) {
     wx.removeStorageSync(pageUrl)
@@ -113,21 +109,21 @@ export function WX_isRefresh(pageUrl: string): boolean {
 /**
  * 设置回退到指定页面，告诉该页面需要刷新，或者带回去的参数
  */
-export function WX_setRefresh(pageUrl: string, value?: any): void {
+export function wx_setRefresh(pageUrl: string, value?: any): void {
   wx.setStorageSync(pageUrl, value || true)
 }
 
 /**
  * 某项操作之后要跳转的页面就进行跳转，设置要跳转的页面
  */
-export function WX_set_jump_page(pageUrl: string) {
+export function wx_set_jump_page(pageUrl: string) {
   wx.setStorageSync("tool-backUrl", pageUrl);
 }
 
 /**
  * 某项操作之后要跳转的页面就进行跳转，跳转之后将缓存清空
  */
-export function WX_jump(homePage?: string): void {
+export function wx_jump(homePage?: string): void {
   // 如果有登录之后要跳转的页面就进行跳转
   const backUrl = wx.getStorageSync("tool-backUrl");
   if (backUrl) {
@@ -150,5 +146,19 @@ export function WX_jump(homePage?: string): void {
   wx.removeStorageSync("tool-backUrl");
 };
 
-
 //#endregion
+
+export default {
+  getQueryFromUrl,
+  fullScreen,
+  exitFullscreen,
+  isFullScreen,
+  changeFullScreenStatus,
+  Speak,
+  checkPhone,
+  checkEmail,
+  wx_isRefresh,
+  wx_setRefresh,
+  wx_set_jump_page,
+  wx_jump,
+}
