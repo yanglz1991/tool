@@ -25,6 +25,23 @@ export function fullScreen(dom?: DOMException) {
   }
 }
 
+
+/**
+ * 图片导出
+ */
+export function downloadImg(img: HTMLImageElement, fileName = 'img') {
+  const canvas = document.createElement('canvas')
+  canvas.width = img.width
+  canvas.height = img.height;
+  (canvas.getContext('2d') as CanvasRenderingContext2D).drawImage(img, 0, 0)
+  const url = canvas.toDataURL('image/png')
+  const aLink = document.createElement('a')
+  aLink.download = fileName
+  aLink.href = url
+  aLink.click()
+  aLink.remove()
+}
+
 /**
  * 退出全屏操作
  */
